@@ -6,7 +6,9 @@ app.use(express.json());
 const port = process.env.PORT || 3000;
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: ["http://localhost:5173",
+      "https://anshika-portfolio-7v3q.vercel.app"
+    ],
     credentials: true, 
   })
 );
