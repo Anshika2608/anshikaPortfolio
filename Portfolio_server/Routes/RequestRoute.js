@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Contact = require('../models/Contact'); // MongoDB model (optional if you're saving to DB)
+const Contact = require('../models/contact'); 
 
 router.post('/contact', async (req, res) => {
   try {
