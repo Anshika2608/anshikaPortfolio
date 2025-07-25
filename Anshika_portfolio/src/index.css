@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+@theme {
+  --color-primary: #22c55e;
+  --color-charcoal: #28282b;
+  --font-tech: "Space Mono", monospace;
+}
+@custom-variant dark (&:where(.dark, .dark *));
+
+
