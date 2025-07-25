@@ -10,12 +10,10 @@ router.post('/contact', async (req, res) => {
     if (!name || !email || !subject || !message) {
       return res.status(400).json({ error: 'All fields are required.' });
     }
-
-    // Optionally save to MongoDB
     const contact = new Contact({ name, email, subject, message });
     await contact.save();
 
-    // You can also send an email here using nodemailer if needed
+  
 
     res.status(200).json({ message: 'Message received successfully!' });
   } catch (error) {

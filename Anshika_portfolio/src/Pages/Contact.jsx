@@ -14,7 +14,7 @@ function Contact({ isOpen }) {
     };
 
     try {
-      const res = await axios.post("http://localhost:5000/contact", formData);
+      const res = await axios.post("https://anshikaportfolio.onrender.com/contact", formData);
       toast.success("Message sent successfully!");
       e.target.reset();
     } catch (err) {
