@@ -5,9 +5,31 @@ import weefashion from "../assets/weefashion.png"
 import shortify from "../assets/shortify.png"
 import headBall from "../assets/headBall.png"
 import portfolio from "../assets/portfolio.png"
+import Buzzbook from "../assets/Buzzbook.png"
+import Dashboard from "../assets/sales_dashboard.png"
 import { Github } from 'lucide-react';
+// Add this new data
+const dataAnalystProjects = [
+  {
+    name: "Sales Analysis Dashboard",
+    image: Dashboard,
+    description:
+      "An interactive sales analysis dashboard that provides insights into revenue, trends, and performance using data visualization techniques.",
+    technologies: ["Power BI", "Data Visualization"],
+    github: "https://github.com/Anshika2608/sales_analysis_dashboard",
+  },
+];
 const projectData = [
   {
+    name: "Buzzbook",
+    image: Buzzbook,
+    description: "BuzzBook is a movie ticket booking platform where users can select seats in real-time and complete bookings with secure payments.",
+    technologies: ["Next js", "Node.js", "Express.js", "MongoDB", "Cloudinary"],
+    github: "https://github.com/yourusername/movie-booking",
+    live: "https://buzzbook-project.vercel.app",
+  },
+  {
+
     name: "Weefashion ",
     image: weefashion,
     description:
@@ -31,33 +53,7 @@ const projectData = [
     technologies: ["HTML", "CSS", "javaScript"],
     github: "https://github.com/Anshika2608/game_animation",
     live: "https://game-animation-rho.vercel.app"
-  },
-
-  // {
-  //   name: "Appointment Booking System",
-  //   image: "/images/appointment.png",
-  //   description: "A real-time appointment booking app with admin panel and notification system.",
-  //   technologies: ["React.js", "Node.js", "MongoDB", "Socket.io", "JWT"],
-  //   github: "https://github.com/yourusername/appointment-app",
-  //   live: "https://appointment-app.vercel.app",
-  // },
-
-  // {
-  //   name: "Movie Booking System",
-  //   image: "/images/movie-booking.png",
-  //   description: "A cinema ticket booking platform with QR ticket generation and seat layout.",
-  //   technologies: ["React", "Node", "Express", "MongoDB", "Cloudinary"],
-  //   github: "https://github.com/yourusername/movie-booking",
-  //   live: "https://movie-booking.vercel.app",
-  // },
-  {
-    name: "Portfolio",
-    image: portfolio,
-    description: "My personal developer portfolio showcasing projects, skills, and contact info.",
-    technologies: ["React.js", "Framer Motion", "Tailwind CSS"],
-    github: "https://github.com/Anshika2608/anshikaPortfolio",
-    live: "https://anshika-portfolio-seven.vercel.app",
-  },
+  }
 ];
 
 function Projects({ isOpen }) {
@@ -79,7 +75,10 @@ function Projects({ isOpen }) {
           <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold font-tech text-white">
             Projects
           </h1>
-        </motion.div>     
+          <h2 className="text-3xl md:text-4xl font-bold text-green-400 mb-10 text-center mt-4">
+            Full Stack Projects
+          </h2>
+        </motion.div>
         <div className="grid gap-10 md:grid-cols-2">
           {projectData.map((project, index) => (
             <motion.div
@@ -136,6 +135,61 @@ function Projects({ isOpen }) {
                   </a>
                 </div>
               </div>
+            </motion.div>
+          ))}
+        </div>
+        {/* 📊 DATA ANALYST PROJECTS */}
+        <h2 className="text-3xl md:text-4xl font-bold text-green-400 mb-10 text-center mt-4">
+          Data Analyst Projects
+        </h2>
+
+        <div className="grid gap-10 md:grid-cols-2">
+          {dataAnalystProjects.map((project, index) => (
+           <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              className="bg-card border border-border rounded-xl overflow-hidden shadow-md w-full max-w-[430px] mx-auto "
+            >
+
+              <motion.div
+                className="overflow-hidden rounded-lg"
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-auto"
+                />
+              </motion.div>
+              <div className='p-5'>
+                <h2 className="text-2xl font-semibold text-green-400 mb-2">
+                  {project.name}
+                </h2>
+
+                <p className="text-gray-400 text-base font-semibold mb-4">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.technologies.map((tech, i) => (
+                    <span key={i} className="px-2 py-0.5 bg-charcoal text-white text-sm rounded-md">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex gap-4">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer"
+                    className="w-10 h-10 bg-charcoal flex items-center justify-center text-white rounded-full hover:bg-purple-900">
+                    <Github />
+                  </a>
+                </div>
+              </div>
+
             </motion.div>
           ))}
         </div>

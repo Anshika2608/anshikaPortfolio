@@ -68,9 +68,8 @@ function AboutMe({ isOpen }) {
                 complex challenges.
               </p>
               <p>
-                I am also deeply enthusiastic about AI/ML, consistently
-                expanding my knowledge and integrating intelligent models into
-                applications to enhance functionality.
+                I am also deeply enthusiastic about data analysis, continuously enhancing my skills in data interpretation, visualization, and deriving insights to support data-driven decision making.
+
               </p>
               <p>I look forward to collaborating with you!</p>
             </div>

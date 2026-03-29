@@ -75,8 +75,126 @@ function Experience({ isOpen }) {
             </svg>
             Internships
           </h2>
+          {/* first */}
+          <div className="relative pl-8 mb-16">
+            <div className="absolute left-[8px] -translate-x-1/2 top-0 w-0.5 bg-green-600 dark:bg-gray-400 h-full z-0" />
+            <div className="absolute left-[8px] -translate-x-1/2 top-0 w-4 h-4 rounded-full bg-primary z-10"></div>
 
-          {/* First Internship */}
+            <motion.div
+              initial={{ opacity: 0, y: -50 }}
+              animate={meetkatsCardControls}
+              transition={{ duration: 0.8 }}
+              className="bg-card rounded-lg p-6 shadow-md border border-border relative z-10"
+            >
+              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                    Full Stack Developer Intern
+                  </h3>
+                  <p className="text-gray-700 dark:text-gray-400 text-lg">
+                    Quikkonnect Solutions Pvt Ltd (Remote)
+                  </p>
+                </div>
+                <div className="flex items-center mt-2 md:mt-0 text-sm text-gray-700 dark:text-gray-400">
+                  Jan 2026 - Mar 2026
+                </div>
+              </div>
+
+              <h4 className="text-lg mt-6 mb-2 text-black dark:text-white">
+                Technologies Used:
+              </h4>
+              <div className="flex flex-wrap gap-2 text-gray-700 dark:text-gray-400">
+                {["Django", "React.js", "Python", "REST APIs", "PostgreSQL"].map((tech) => (
+                  <span key={tech} className="px-2 py-0.5 text-xs rounded-md">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              <h4 className="text-lg mb-2 text-black dark:text-white mt-4">
+                Key Responsibilities:
+              </h4>
+              <motion.ul
+                className="list-disc list-inside text-base space-y-1 text-gray-700 dark:text-gray-400"
+                variants={listVariants}
+                initial="hidden"
+                animate={meetkatsListControls}
+              >
+                {[
+                  "Developing and maintaining full-stack features using Django and React.js.",
+                  "Building RESTful APIs and integrating them with frontend components.",
+                  "Implementing new features and enhancing existing functionalities based on requirements.",
+                  "Optimizing application performance and improving user experience.",
+                  "Collaborating with team members to deliver scalable and maintainable solutions.",
+                ].map((point, index) => (
+                  <motion.li key={index} variants={itemVariants}>
+                    {point}
+                  </motion.li>
+                ))}
+              </motion.ul>
+            </motion.div>
+          </div>
+          <div className="relative pl-8 mb-16">
+
+            {/* second internship */}
+            <div className="absolute left-[8px] -translate-x-1/2 top-0 w-0.5 bg-green-600 dark:bg-gray-400 h-full z-0" />
+            <div className="absolute left-[8px] -translate-x-1/2 top-0 w-4 h-4 rounded-full bg-primary z-10"></div>
+
+            <motion.div
+              initial={{ opacity: 0, y: -50 }}
+              animate={meetkatsCardControls}
+              transition={{ duration: 0.8 }}
+              className="bg-card rounded-lg p-6 shadow-md border border-border relative z-10"
+            >
+              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                    Founder's office Intern
+                  </h3>
+                  <p className="text-gray-700 dark:text-gray-400 text-lg">
+                    Neyo Global (Remote)
+                  </p>
+                </div>
+                <div className="flex items-center mt-2 md:mt-0 text-sm text-gray-700 dark:text-gray-400">
+                  Oct 2025 - Dec 2025
+                </div>
+              </div>
+
+              <h4 className="text-lg mt-6 mb-2 text-black dark:text-white">
+                Technologies Used:
+              </h4>
+              <div className="flex flex-wrap gap-2 text-gray-700 dark:text-gray-400">
+                {["React.js", "JavaScript", "HTML", "CSS", "Tailwind CSS"].map((tech) => (
+                  <span key={tech} className="px-2 py-0.5 text-xs rounded-md">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              <h4 className="text-lg mb-2 text-black dark:text-white mt-4">
+                Key Responsibilities:
+              </h4>
+              <motion.ul
+                className="list-disc list-inside text-base space-y-1 text-gray-700 dark:text-gray-400"
+                variants={listVariants}
+                initial="hidden"
+                animate={meetkatsListControls}
+              >
+                {[
+                  "Developed responsive user interfaces using React.js based on Figma designs.",
+                  "Translated UI/UX designs into pixel-perfect web pages with attention to detail.",
+                  "Worked with reusable components to maintain consistency across the application.",
+                  "Improved UI responsiveness and cross-browser compatibility.",
+                  "Collaborated with designers to ensure accurate implementation of design systems.",
+                ].map((point, index) => (
+                  <motion.li key={index} variants={itemVariants}>
+                    {point}
+                  </motion.li>
+                ))}
+              </motion.ul>
+            </motion.div>
+          </div>
+          {/* Third Internship */}
           <div className="relative pl-8 mb-16" ref={expRef}>
             <motion.div
               initial={{ height: 0 }}
@@ -125,7 +243,7 @@ function Experience({ isOpen }) {
             </motion.div>
           </div>
 
-          {/* Second Internship */}
+          {/* Fourth Internship */}
           <div className="relative pl-8">
             <motion.div
               initial={{ height: 0 }}
